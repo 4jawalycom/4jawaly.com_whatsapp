@@ -1,10 +1,10 @@
 <?php
-$domain = "https://wa-XXX.4jawaly.com/";
+$domain = "https://wa-XXX.4jawaly.com/"; // log in user.4jawaly.com -> whatsapp -> ارسال رسالة -> API Docs
 $params = [];
-$params["token"] = "XXXXXXXX";
+$params["token"] = "XXXXXXXX"; // log in user.4jawaly.com -> whatsapp -> ارسال رسالة -> API Docs
 $params["phone"] = "19292439373";
-$params["body"] = "test msg from example"; // نص الرسالة
-$params["quotedMsgId"] = ""; // معرف الرسالة المستشهد بها
+$params["body"] = "test msg from example";  //Message text, UTF-8 
+$params["quotedMsgId"] = ""; //Quoted message ID from the message list. Example: false_17472822486@c.us_DF38E6A25B42CC8CCE57EC40F. " تستخدم للرد على رسالة محددة مرسلة سابقا 
 
 if (empty($params["token"])) {
     echo "token: It must not be a null value";
