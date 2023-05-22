@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const domain = 'https://wa-116.4jawaly.com/';
+const domain = 'https://wa-XXX.4jawaly.com/';
 const token = 'XXXXX';
 const phone = '19292439373';
 const body = 'test msg from node js';
