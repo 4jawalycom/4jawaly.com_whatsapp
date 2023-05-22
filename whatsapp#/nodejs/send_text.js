@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const domain = 'https://wa-116.4jawaly.com/';
-const token = 'Wb2B1cUy59';
+const token = 'XXXXX';
 const phone = '19292439373';
 const body = 'test msg from node js';
 const quotedMsgId = '';
