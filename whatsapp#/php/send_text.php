@@ -1,28 +1,23 @@
 <?php
-$domain = "https://wa-XXX.4jmawaly.com/";
+$domain = "https://wa-XXX.4jawaly.com/";
 $params = [];
-$params["token"] = "XXXXXXXXXX";
-$params["phone"] = "9665000000";
-$params["body"] = "test msg "; // نص الرسالة
+$params["token"] = "XXXXXXXX";
+$params["phone"] = "19292439373";
+$params["body"] = "test msg from example"; // نص الرسالة
 $params["quotedMsgId"] = ""; // معرف الرسالة المستشهد بها
 
 if (empty($params["token"])) {
-    echo "يجب ألا يكون الحقل (Token) فارغًا";
+    echo "token: It must not be a null value";
     exit();
 }
 
 if (empty($params["phone"])) {
-    echo "يرجى تحديد رقم الهاتف";
-    exit();
-}
-
-if (empty($domain) || !preg_match('/^https:\/\/wa-\d+\.4jawaly\.com\/$/', $domain)) {
-    echo "يرجى تحديد النطاق الصحيح (https://wa-youserver_number.4jmawaly.com/)";
+    echo "phone: It must not be a null value";
     exit();
 }
 
 if (empty($params["body"])) {
-    echo "نص الرسالة فارغ";
+    echo "body: It must not be a null value";
     exit();
 }
 
@@ -64,4 +59,5 @@ if ($httpCode == 200) {
     echo "code: $code\n";
     echo "message: $message\n";
 }
+
 ?>
