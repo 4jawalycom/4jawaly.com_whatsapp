@@ -8,8 +8,8 @@
 export default {
     methods: {
         sendMessage() {
-            const domain = 'https://wa-116.4jawaly.com/';
-            const token = 'Wb2B1cUy59';
+            const domain = 'https://wa-XXX.4jawaly.com/';
+            const token = 'XXXX';
             const phone = '19292439373';
             const body = 'https://i0.wp.com/www.4jawaly.com/wp-content/uploads/2019/05/itservice2_pic2.png';
             const quotedMsgId = '';
