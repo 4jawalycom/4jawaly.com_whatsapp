@@ -1,15 +1,14 @@
 import requests
 
-domain = "https://wa-XXXX.4jawaly.com/"#log in user.4jawaly.com -> whatsapp -> ارسال رسالة -> API Docs
+domain = "https://wa-XXX.4jawaly.com/"
 params = {
-    "token": "XXXXXX", #log in user.4jawaly.com -> whatsapp -> ارسال رسالة -> API Docs
-    "phone": "19292439373", 
-    "body": "https://cdn-dev.4jawaly.com/spam-regulation.pdf", #PDF ,xlsx  url
-    "quotedMsgId": "", #Quoted message ID from the message list. Example: false_17472822486@c.us_DF38E6A25B42CC8CCE57EC40F. " تستخدم للرد على رسالة محددة مرسلة سابقا
-    "filename": "filename.pdf" #.pdf ,.xlsx
+    "token": "XXXXXXXXX",
+    "phone": "19292439373",
+    "body": "https://cdn-dev.4jawaly.com/spam-regulation.pdf",
+    "quotedMsgId": "",
+    "filename": "filename.pdf"
 }
 
-# Check if required fields are empty
 if not params["token"]:
     print("token: It must not be a null value")
     exit()
@@ -22,24 +21,16 @@ if not params["body"]:
     print("body: It must not be a null value")
     exit()
 
-url = domain + "api/v1/message/file"
+url = f"{domain}api/v1/message/file"
+headers = {"Accept": "application/json"}
 
-response = requests.post(url, json=params, headers={"Accept": "application/json"})
-http_code = response.status_code
+response = requests.post(url, headers=headers, data=params)
+result = response.json()
 
-if http_code == 200:
-    result = response.json()
-    code = result["code"]
-    message = "تم الارسال بنجاح"
-    id = result["id"]
+code = result["code"]
+message = "تم الارسال بنجاح" if response.status_code == 200 else result["message"]
+id = result["id"]
 
-    print(f"code: {code}")
-    print(f"message: {message}")
-    print(f"id: {id}")
-else:
-    error = response.json()
-    code = error["code"]
-    message = error["message"]
-
-    print(f"code: {code}")
-    print(f"message: {message}")
+print(f"code: {code}")
+print(f"message: {message}")
+print(f"id: {id}")
